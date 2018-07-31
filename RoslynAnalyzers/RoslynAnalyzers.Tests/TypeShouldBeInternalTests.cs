@@ -1,12 +1,12 @@
-﻿using Gu.Roslyn.Asserts;
-using Microsoft.CodeAnalysis.Diagnostics;
-using NUnit.Framework;
-
-namespace RoslynAnalyzers.Tests
+﻿namespace RoslynAnalyzers.Tests
 {
-    internal class ClassShouldBeInternalTests
+    using Gu.Roslyn.Asserts;
+    using Microsoft.CodeAnalysis.Diagnostics;
+    using NUnit.Framework;
+
+    internal class TypeShouldBeInternalTests
     {
-        private static readonly DiagnosticAnalyzer Analyzer = new ClassShouldBeInternalAnalyzer();
+        private static readonly DiagnosticAnalyzer Analyzer = new TypeSouldBeInternalAnalyzer();
 
         [Test]
         public void WhenInternal()

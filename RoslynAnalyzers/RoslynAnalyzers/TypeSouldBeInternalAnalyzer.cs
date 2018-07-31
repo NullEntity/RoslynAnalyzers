@@ -7,7 +7,7 @@
     using Microsoft.CodeAnalysis.Diagnostics;
 
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
-    public class ClassShouldBeInternalAnalyzer : DiagnosticAnalyzer
+    public class TypeSouldBeInternalAnalyzer : DiagnosticAnalyzer
     {
         public const string DiagnosticId = "GU0072";
 
