@@ -1,12 +1,14 @@
 ﻿namespace RoslynAnalyzers.Tests
 {
     using Gu.Roslyn.Asserts;
+    using Microsoft.CodeAnalysis.CodeFixes;
     using Microsoft.CodeAnalysis.Diagnostics;
     using NUnit.Framework;
 
     internal class TypeShouldBeInternalTests
     {
         private static readonly DiagnosticAnalyzer Analyzer = new TypeSouldBeInternalAnalyzer();
+        private static readonly CodeFixProvider Fix = new MakeTypeInternalFix();
 
         [Test]
         public void WhenInternal()
@@ -45,6 +47,27 @@ namespace RoslynSandbox
     }
 }";
             AnalyzerAssert.Diagnostics(Analyzer, code);
+        }
+
+        [Test]
+        public void WhenPublicWithFix()
+        {
+            var code = @"
+namespace RoslynSandbox
+{
+    ↓public class Foo
+    {
+    }
+}";
+
+            var fixedCode = @"
+namespace RoslynSandbox
+{
+    internal class Foo
+    {
+    }
+}";
+            AnalyzerAssert.CodeFix(Analyzer, Fix, code, fixedCode);
         }
     }
 }
