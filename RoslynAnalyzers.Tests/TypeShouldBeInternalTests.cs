@@ -7,7 +7,7 @@
 
     internal class TypeShouldBeInternalTests
     {
-        private static readonly DiagnosticAnalyzer Analyzer = new TypeSouldBeInternalAnalyzer();
+        private static readonly DiagnosticAnalyzer Analyzer = new TypeShouldBeInternalAnalyzer();
         private static readonly CodeFixProvider Fix = new MakeTypeInternalFix();
 
         [Test]

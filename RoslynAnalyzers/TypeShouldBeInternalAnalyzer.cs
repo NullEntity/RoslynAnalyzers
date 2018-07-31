@@ -7,18 +7,18 @@
     using Microsoft.CodeAnalysis.Diagnostics;
 
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
-    public class TypeSouldBeInternalAnalyzer : DiagnosticAnalyzer
+    public class TypeShouldBeInternalAnalyzer : DiagnosticAnalyzer
     {
-        public const string DiagnosticId = "GU0072";
+        public const string DiagnosticId = "Scratch01";
 
         public static readonly DiagnosticDescriptor Descriptor = new DiagnosticDescriptor(
             id: DiagnosticId,
-            title: "All types should be internal.",
-            messageFormat: "All types should be internal.",
+            title: "Type should be internal.",
+            messageFormat: "Type should be internal.",
             category: "OCD",
             defaultSeverity: DiagnosticSeverity.Warning,
             isEnabledByDefault: true,
-            description: "All types should be internal.");
+            description: "Type should be internal.");
 
         /// <inheritdoc/>
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } =

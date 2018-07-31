@@ -14,7 +14,7 @@
     {
         /// <inheritdoc/>
         public override ImmutableArray<string> FixableDiagnosticIds { get; } = ImmutableArray.Create(
-            TypeSouldBeInternalAnalyzer.DiagnosticId);
+            TypeShouldBeInternalAnalyzer.DiagnosticId);
 
         public override FixAllProvider GetFixAllProvider() => WellKnownFixAllProviders.BatchFixer;
 
